@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Neo-brutalist palette */
+    --cyan: 183 96% 73%;
+    --electric-blue: 248 100% 50%;
+    --yellow: 54 100% 50%;
+    --orange: 14 100% 53%;
+    --teal: 168 88% 52%;
+    --magenta: 302 100% 49%;
+
+    /* Base colors */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 5%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+
+    /* Semantic colors */
+    --primary: 248 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 54 100% 50%;
+    --secondary-foreground: 0 0% 5%;
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 183 96% 73%;
+    --accent-foreground: 0 0% 5%;
+    --destructive: 14 100% 53%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* UI elements */
+    --border: 0 0% 5%;
+    --input: 0 0% 5%;
+    --ring: 248 100% 50%;
+    --radius: 0px;
+
+    /* Neo-brutalist tokens */
+    --border-width: 3px;
+    --shadow-offset: 4px;
+    --shadow-color: 0 0% 5%;
+
+    /* Sidebar (keeping defaults) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 183 96% 73%;
+    --primary-foreground: 0 0% 5%;
+    --secondary: 54 100% 50%;
+    --secondary-foreground: 0 0% 5%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 248 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 0 0% 80%;
+    --input: 0 0% 80%;
+    --ring: 183 96% 73%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image:
+      linear-gradient(to right, hsl(0 0% 90% / 0.5) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(0 0% 90% / 0.5) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Neo-brutalist card */
+  .neo-card {
+    @apply bg-card border-brutal shadow-brutal transition-all duration-150;
+  }
+
+  .neo-card:hover {
+    @apply shadow-brutal-hover -translate-y-1 translate-x-1;
+  }
+
+  /* Neo-brutalist button base */
+  .neo-btn {
+    @apply inline-flex items-center justify-center font-display font-semibold 
+           border-brutal px-6 py-3 transition-all duration-150 
+           hover:-translate-y-0.5 hover:translate-x-0.5 hover:shadow-brutal-sm
+           active:translate-y-0 active:translate-x-0 active:shadow-none;
+  }
+
+  .neo-btn-primary {
+    @apply neo-btn bg-primary text-primary-foreground hover:bg-electric-blue;
+  }
+
+  .neo-btn-secondary {
+    @apply neo-btn bg-secondary text-secondary-foreground hover:bg-yellow;
+  }
+
+  .neo-btn-accent {
+    @apply neo-btn bg-accent text-accent-foreground hover:bg-cyan;
+  }
+
+  /* Status badges */
+  .status-shipped {
+    @apply bg-teal text-foreground;
+  }
+
+  .status-progress {
+    @apply bg-yellow text-foreground;
+  }
+
+  .status-prototype {
+    @apply bg-orange text-white;
+  }
+
+  /* Tech chips */
+  .tech-chip {
+    @apply inline-flex items-center px-3 py-1 text-sm font-medium 
+           border-2 border-foreground bg-card;
+  }
+}
+
+@layer utilities {
+  .border-brutal {
+    border-width: var(--border-width);
+    border-color: hsl(var(--foreground));
+  }
+
+  .shadow-brutal {
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0
+      hsl(var(--shadow-color));
+  }
+
+  .shadow-brutal-sm {
+    box-shadow: 2px 2px 0 0 hsl(var(--shadow-color));
+  }
+
+  .shadow-brutal-hover {
+    box-shadow: 6px 6px 0 0 hsl(var(--shadow-color));
+  }
+
+  .font-display {
+    font-family: "Space Grotesk", system-ui, sans-serif;
+  }
+
+  .font-sans {
+    font-family: "Inter", system-ui, sans-serif;
+  }
+}
