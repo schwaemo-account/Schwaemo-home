@@ -7,7 +7,9 @@ interface StatusBadgeProps {
 const statusConfig: Record<ProjectStatus, { label: string; className: string }> = {
   shipped: { label: "Shipped", className: "status-shipped" },
   "in-progress": { label: "In Progress", className: "status-progress" },
+  mvp: { label: "MVP", className: "status-mvp" },
   prototype: { label: "Prototype", className: "status-prototype" },
+  tbd: { label: "TBD", className: "status-tbd" },
 };
 
 const StatusBadge = ({ status }: StatusBadgeProps) => {

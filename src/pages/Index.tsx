@@ -11,19 +11,19 @@ const Index = () => {
     {
       icon: Zap,
       title: "Knowledge Velocity",
-      description: "Devouring long reads in seconds. Why read the whole thing when the gist is this tasty?",
+      description: "We build tools that shorten the gap between finding information and actually understanding it.",
       color: "bg-yellow",
     },
     {
       icon: Target,
       title: "Trust-Based Navigation",
-      description: "Searching the web like a handshake, not a surveillance camera. We respect the 'Bro' code.",
+      description: "We prefer products that help people verify what they are seeing instead of asking for blind trust.",
       color: "bg-electric-blue",
     },
     {
       icon: Lightbulb,
       title: "Chromatic Sorcery",
-      description: "Turning black and white into techno-color dreams. Because life is too short for grayscale.",
+      description: "We like expressive interfaces with personality, especially when they make technical workflows easier to read.",
       color: "bg-magenta",
     },
   ];
@@ -37,11 +37,11 @@ const Index = () => {
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] mb-6">
               A marketplace of
               <br />
-              things I've built.
+              things we've built.
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl">
-              Shipping projects + experimentation. Building things that solve real
-              problems and learning along the way.
+              Schwaemo is a two-founder studio building AI tools, search experiments,
+              and product bets that make information easier to use.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/showcase" className="neo-btn-primary text-lg">
@@ -49,7 +49,7 @@ const Index = () => {
                 <ArrowRight className="ml-2" size={20} />
               </Link>
               <Link to="/founders" className="neo-btn-secondary text-lg">
-                About the Founder(s)
+                Meet the Founders
               </Link>
             </div>
           </div>
@@ -92,7 +92,7 @@ const Index = () => {
       <section>
         <div className="container mx-auto px-4 py-16">
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-10">
-            How I Build
+            How We Build
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

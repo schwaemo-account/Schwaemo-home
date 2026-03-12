@@ -8,7 +8,7 @@
   :root {
     /* Neo-brutalist palette */
     --cyan: 183 96% 73%;
-    --electric-blue: 248 100% 50%;
+    --electric-blue: 248 96% 67%;
     --yellow: 54 100% 50%;
     --orange: 14 100% 53%;
     --teal: 168 88% 52%;
@@ -139,8 +139,16 @@
     @apply bg-yellow text-foreground;
   }
 
+  .status-mvp {
+    @apply bg-cyan text-foreground;
+  }
+
   .status-prototype {
     @apply bg-orange text-white;
+  }
+
+  .status-tbd {
+    @apply bg-muted text-foreground;
   }
 
   /* Tech chips */

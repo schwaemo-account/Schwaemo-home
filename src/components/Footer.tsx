@@ -3,7 +3,7 @@ import logo from "/assets/logo.png";
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
+    { icon: Github, href: "https://github.com/Schwaemo", label: "GitHub" },
   ];
 
   return (
@@ -21,7 +21,7 @@ const Footer = () => {
               <h3 className="font-display text-xl font-bold">SCHWAEMO</h3>
             </div>
             <p className="text-muted-foreground text-sm mt-1">
-              A marketplace of things I've built.
+              A marketplace of things we've built.
             </p>
           </div>
 
@@ -43,7 +43,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Schwaemo. Ship fast.
+            Copyright {new Date().getFullYear()} Schwaemo. Ship fast.
           </p>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Github, ExternalLink, Image } from "lucide-react";
 import Layout from "@/components/Layout";
 import StatusBadge from "@/components/StatusBadge";
@@ -16,7 +16,6 @@ const colorClasses: Record<Project["color"], string> = {
 
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
   const project = getProjectBySlug(slug || "");
 
   if (!project) {
@@ -85,6 +84,16 @@ const ProjectDetail = () => {
                   GitHub
                 </a>
               )}
+              {project.githubDisabled && !project.links.github && (
+                <button
+                  type="button"
+                  disabled
+                  className="neo-btn bg-card text-muted-foreground opacity-60 cursor-not-allowed"
+                >
+                  <Github size={20} className="mr-2" />
+                  GitHub
+                </button>
+              )}
               {project.links.demo && (
                 <a
                   href={project.links.demo}
@@ -136,10 +145,10 @@ const ProjectDetail = () => {
                 </ul>
               </div>
 
-              {/* What I Learned */}
+              {/* What We Learned */}
               <div className="neo-card p-6 md:p-8">
                 <h2 className="font-display text-2xl font-bold mb-4">
-                  What I Learned
+                  What We Learned
                 </h2>
                 <p className="text-foreground leading-relaxed">
                   {project.learned}
@@ -154,7 +163,7 @@ const ProjectDetail = () => {
                 <ul className="space-y-2">
                   {project.nextSteps.map((step, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <span className="text-teal font-bold">→</span>
+                      <span className="text-teal font-bold">-&gt;</span>
                       <span className="text-foreground">{step}</span>
                     </li>
                   ))}

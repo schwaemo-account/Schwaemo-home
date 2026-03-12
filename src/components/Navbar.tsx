@@ -45,9 +45,6 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-            <Link to="/showcase" className="neo-btn-primary text-sm">
-              View Projects →
-            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -74,13 +71,6 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-            <Link
-              to="/showcase"
-              onClick={() => setMobileMenuOpen(false)}
-              className="neo-btn-primary text-sm w-full text-center"
-            >
-              View Projects →
-            </Link>
           </div>
         )}
       </div>

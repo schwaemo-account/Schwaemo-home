@@ -22,7 +22,7 @@ const Showcase = () => {
   };
 
   const filteredAndSortedProjects = useMemo(() => {
-    let result = [...projects];
+    let result = [...projects].reverse();
 
     // Filter by search query
     if (searchQuery) {
@@ -49,13 +49,11 @@ const Showcase = () => {
           new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
       );
     } else {
-      // Featured first, then by date
+      // Keep the reversed card order, but group featured work ahead of everything else.
       result.sort((a, b) => {
         if (a.featured && !b.featured) return -1;
         if (!a.featured && b.featured) return 1;
-        return (
-          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-        );
+        return 0;
       });
     }
 
