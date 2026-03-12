@@ -95,7 +95,7 @@ export const projects: Project[] = [
     techStack: ["Tauri", "React", "TypeScript", "Zustand", "Monaco"],
     learned: "Desktop AI tools need clear machine-state feedback. Without that grounding, even a polished UI still feels like a thin wrapper over a pile of scripts.",
     nextSteps: ["Connect more of the model management flow end to end", "Define the execution experience beyond the current shell"],
-    createdAt: "2024-02-20",
+    createdAt: "2026-03-10",
   },
 ];
 
