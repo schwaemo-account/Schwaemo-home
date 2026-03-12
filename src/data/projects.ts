@@ -62,7 +62,7 @@ export const projects: Project[] = [
     color: "electric-blue",
     links: {
       github: "https://github.com/Schwaemo/trust-me-bro",
-      demo: "https://schwaemo.github.io/trust-me-bro/",
+      demo: "https://trust-me-bro-schwaemo.vercel.app/",
     },
     problem: "Search is increasingly split between AI answers you cannot inspect and result pages that make verification slow. The gap between summary and source is where trust breaks down.",
     approach: [
