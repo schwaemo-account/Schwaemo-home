@@ -84,8 +84,9 @@ export const projects: Project[] = [
     status: "tbd",
     featured: true,
     color: "teal",
-    links: {},
-    githubDisabled: true,
+    links: {
+      github: "https://github.com/Schwaemo/huggingbox",
+    },
     problem: "Local model tooling is often spread across scripts, download folders, and one-off utilities. It is hard to understand what a machine can run and what models are already in play.",
     approach: [
       "Started a Tauri and React desktop shell with dedicated browse, detail, library, and settings views.",

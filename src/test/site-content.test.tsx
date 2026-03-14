@@ -153,7 +153,7 @@ describe("project detail hero links", () => {
     );
   });
 
-  it("shows a disabled GitHub button for HuggingBox", () => {
+  it("shows the GitHub repository link for HuggingBox", () => {
     renderProjectDetail("huggingbox");
 
     const hero = screen
@@ -163,8 +163,10 @@ describe("project detail hero links", () => {
 
     const scoped = within(hero!);
     expect(scoped.getByText("TBD")).toBeInTheDocument();
-    expect(scoped.getByRole("button", { name: /github/i })).toBeDisabled();
-    expect(scoped.queryByRole("link", { name: /github/i })).not.toBeInTheDocument();
+    expect(scoped.getByRole("link", { name: /github/i })).toHaveAttribute(
+      "href",
+      "https://github.com/Schwaemo/huggingbox"
+    );
     expect(scoped.queryByRole("link", { name: /live demo/i })).not.toBeInTheDocument();
   });
 });
